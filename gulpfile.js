@@ -6,6 +6,7 @@ var open = require('gulp-open');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
+var lint = require('gulp-eslint');
 
 
 
@@ -13,6 +14,8 @@ var uglify = require('gulp-uglify');
 gulp.task('lint', function()
 {
 	return gulp.src('./src/**/*.js')
+		.pipe(lint())
+		.pipe(lint.format());
 });
 
 
