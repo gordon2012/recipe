@@ -1,6 +1,23 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
 
+var concat = require('gulp-concat');
+var connect = require('gulp-connect');
+var open = require('gulp-open');
+var rename = require('gulp-rename');
+var sass = require('gulp-sass');
+var uglify = require('gulp-uglify');
+
+
+
+// Lint
+gulp.task('lint', function()
+{
+	return gulp.src('./src/**/*.js')
+});
+
+
+
+// Compile SaSS
 gulp.task('styles', function()
 {
 	gulp.src('sass/**/*.scss')
