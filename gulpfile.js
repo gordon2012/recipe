@@ -1,13 +1,17 @@
+'use strict';
+
 var gulp = require('gulp');
 
 var concat = require('gulp-concat');
 var connect = require('gulp-connect');
 var open = require('gulp-open');
-var rename = require('gulp-rename');
+// var rename = require('gulp-rename');
 var sass = require('gulp-sass');
-var uglify = require('gulp-uglify');
+// var uglify = require('gulp-uglify');
 var lint = require('gulp-eslint');
-
+var browserify = require('browserify');
+var reactify = require('reactify');
+var source = require('vinyl-source-stream');
 
 var config =
 {
@@ -17,15 +21,16 @@ var config =
 	{
 		html: './src/*.html',
 		js: './src/**/*.js',
-		sass: './src/sass/*.scss',
+		sass: './src/*.scss',
 
-		dist: './dist'
+		dist: './dist',
+		mainJs: './src/main.js'
 	}
 };
 
 
 // Default
-gulp.task('default', ['lint', 'html', 'open', 'watch']);
+gulp.task('default', ['lint', 'html', 'js', 'css', 'open', 'watch']);
 //gulp.task('default', ['lint', 'html', 'js', 'css', 'open', 'watch']);
 
 
@@ -46,13 +51,27 @@ gulp.task('html', function()
 		.pipe(connect.reload());
 });
 
+// JS
+gulp.task('js', function()
+{
+	browserify(config.paths.mainJs)
+		.transform(reactify)
+		.bundle()
+		.on('error', console.error.bind(console))
+		.pipe(source('bundle.js'))
+		.pipe(gulp.dest(config.paths.dist))
+		.pipe(connect.reload());
+});
+
 
 // CSS (Compile SaSS)
-gulp.task('styles', function()
+gulp.task('css', function()
 {
-	gulp.src('sass/**/*.scss')
+	gulp.src(config.paths.sass)
 		.pipe(sass().on('error', sass.logError))
-		.pipe(gulp.dest('./css/'));
+		.pipe(concat('bundle.css'))
+		.pipe(gulp.dest(config.paths.dist))
+		.pipe(connect.reload());
 });
 
 
@@ -60,8 +79,8 @@ gulp.task('styles', function()
 gulp.task('watch', function()
 {
 	gulp.watch(config.paths.html, ['html']);
-	gulp.watch(config.paths.js, ['lint']);
-	// gulp.watch('sass/**/*.scss', ['styles']);
+	gulp.watch(config.paths.js, ['js', 'lint']);
+	gulp.watch(config.paths.sass, ['css']);
 });
 
 
