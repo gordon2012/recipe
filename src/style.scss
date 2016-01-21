@@ -13,18 +13,26 @@
 }
 
 
-.bg-warning
+.recipe-box
 {
-	border: 1px solid #999;
-	margin: 16px;
-	padding: 16px;
+	border: 1px solid red;
+	margin: 8px;
+	padding: 8px;
 	border-radius: 4px;
 }
 
-.bg-success
+.recipe-heading
 {
 	border: 1px solid green;
-	margin-bottom: 4px;
-	padding: 4px;
+	margin: 8px;
+	padding: 8px;
+	border-radius: 4px;
+}
+
+.recipe-detail
+{
+	border: 1px solid blue;
+	margin: 8px;
+	padding: 8px;
 	border-radius: 4px;
 }

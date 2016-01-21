@@ -8,7 +8,7 @@ var RecipeDetails = React.createClass
 	{
 		return (
 			<div>
-				<ul className="list-group">
+				<ul className="list-group recipe-details">
 					<li className="list-group-item">Lorem Ipsum</li>
 					<li className="list-group-item">Ergo Sum</li>
 				</ul>

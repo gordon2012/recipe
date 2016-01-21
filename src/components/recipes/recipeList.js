@@ -8,10 +8,10 @@ var RecipeList = React.createClass
 	render: function()
 	{
 		return (
-			<div className="panel panel-success">
+			<div className="recipe-box">
 				{this.props.data.map(function(recipe)
 				{
-					return <Recipe key={recipe.id} data={recipe} />;
+					return <Recipe key={recipe.id} data={recipe} detail="on"/>;
 				})}
 			</div>
 		);
