@@ -8,7 +8,7 @@ var RecipeList = React.createClass
 	render: function()
 	{
 		return (
-			<div className="bg-warning">
+			<div className="panel panel-success">
 				{this.props.data.map(function(recipe)
 				{
 					return <Recipe key={recipe.id} data={recipe} />;

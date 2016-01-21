@@ -11,7 +11,9 @@ var Recipe = React.createClass
 	render: function()
 	{
 		return (
-			<div className="bg-success">{this.props.data.name}</div>
+			<div className="panel-heading">
+				<div>{this.props.data.name}</div>
+			</div>
 		);
 	}
 });
