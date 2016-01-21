@@ -7,9 +7,12 @@ var Home = React.createClass
 	render: function()
 	{
 		return (
-			<div class="main">
-				<h1>React Sass Boilerplate</h1>
-				<p>A template for FreeCodeCamp Data Visualization projects using React and Sass.</p>
+			<div>
+				<div className="jumbotron">
+					<h1>Recipe Box</h1>
+					<p>A project for FreeCodeCamp using React and Sass.</p>
+				</div>
+				<button className="btn btn-primary">New Recipe</button>
 			</div>
 		);
 	}

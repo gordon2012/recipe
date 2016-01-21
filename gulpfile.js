@@ -5,13 +5,12 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var connect = require('gulp-connect');
 var open = require('gulp-open');
-// var rename = require('gulp-rename');
 var sass = require('gulp-sass');
-// var uglify = require('gulp-uglify');
 var lint = require('gulp-eslint');
 var browserify = require('browserify');
 var reactify = require('reactify');
 var source = require('vinyl-source-stream');
+var merge = require('merge-stream');
 
 var config =
 {
@@ -21,10 +20,15 @@ var config =
 	{
 		html: './src/*.html',
 		js: './src/**/*.js',
+		css:
+		[
+			'node_modules/bootstrap/dist/css/bootstrap.min.css',
+			'node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
+		],
 		sass: './src/*.scss',
-
 		dist: './dist',
-		mainJs: './src/main.js'
+		mainJs: './src/main.js',
+		build: './build'
 	}
 };
 
@@ -67,11 +71,17 @@ gulp.task('js', function()
 // CSS (Compile SaSS)
 gulp.task('css', function()
 {
-	gulp.src(config.paths.sass)
-		.pipe(sass().on('error', sass.logError))
+
+	merge
+	(
+		gulp.src(config.paths.sass)
+			.pipe(sass().on('error', sass.logError)),
+		gulp.src(config.paths.css)
+	)
 		.pipe(concat('bundle.css'))
 		.pipe(gulp.dest(config.paths.dist))
 		.pipe(connect.reload());
+		
 });
 
 
