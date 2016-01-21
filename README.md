@@ -1,7 +1,3 @@
-# boilerplate-react-sass
+# Recipe Box
 
-## A Boilerplate for React and Sass
-
-### Tutorial: http://ryanchristiani.com/getting-started-with-gulp-and-sass/
-
-### Technologies:
+## A FreeCodeCamp project using React and Sass
