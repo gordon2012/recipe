@@ -32,6 +32,12 @@
 
 .recipe-heading
 {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+
 	background-color: #dff0d8;
 	padding: 8px;
 

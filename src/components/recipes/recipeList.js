@@ -14,9 +14,10 @@ var RecipeList = React.createClass
 
 	onChildClick: function(recipeName)
 	{
+		var newOpen = this.state.openRecipe === recipeName ? null : recipeName;
 		this.setState
 		({
-			openRecipe: recipeName
+			openRecipe: newOpen
 		});
 	},
 

@@ -5,21 +5,8 @@ var RecipeDetails = require('./recipeDetails');
 
 var Recipe = React.createClass
 ({
-	// getInitialState: function()
-	// {
-	// 	return {
-	// 		open: false,
-	// 		class: 'recipe'
-	// 	};
-	// },
-
 	handleClick: function()
 	{
-		// this.setState
-		// ({
-		// 	open: !this.state.open,
-		// 	class: this.state.open ? 'recipe' : 'recipe open'
-		// });
 		this.props.onChildClick(this.props.data.name);
 	},
 
