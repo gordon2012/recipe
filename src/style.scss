@@ -55,6 +55,16 @@
 		border-radius: 8px 8px 0px 0px;
 		border-bottom: 1px solid black;
 	}
+	.detail-wrap
+	{
+		max-height: 200px;
+	}
+}
+.detail-wrap
+{
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.2s ease-in;
 }
 
 
