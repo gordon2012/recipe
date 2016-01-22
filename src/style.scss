@@ -21,25 +21,12 @@
 	border-radius: 8px;
 }
 
+
 .recipe
 {
 	border: 2px solid black;
-	// background-color: yellow;
 	margin: 8px;
 	border-radius: 8px;
-}
-
-.recipe.open
-{
-	.detail-wrap
-	{
-		// max-height: 200px;
-	}
-}
-
-.detail-wrap
-{
-	// max-height: 0;
 }
 
 
@@ -49,12 +36,6 @@
 	padding: 8px;
 
 	border-radius: 8px;
-	&.on
-	{
-		// border-radius: 8px 8px 0px 0px;
-		// border-bottom: 1px solid black;
-	}
-
 
 	&:hover
 	{
@@ -77,19 +58,6 @@
 
 	.list-group-item:last-child
 	{
-		// background: yellow;
 		border-radius: 0px 0px 8px 8px;
 	}
-	// border: 1px solid blue;
-
-	// border-left: 1px solid blue;
-	// border-right: 1px solid blue;
-	// border-bottom: 1px solid blue;
-
-	// margin: 8px;
-	// padding: 8px;
-
-	// border-radius: 0px 0px 4px 4px;
-
-	// border-radius: 4px;
 }

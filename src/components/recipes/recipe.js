@@ -5,15 +5,9 @@ var RecipeDetails = require('./recipeDetails');
 
 var Recipe = React.createClass
 ({
-	// propTypes:
-	// 	{
-	// 		data: React.PropTypes.object.isRequired
-	// 	},
-
 	getInitialState: function()
 	{
 		return {
-			// detail: this.props.detail
 			open: false,
 			class: 'recipe'
 		};
@@ -21,8 +15,6 @@ var Recipe = React.createClass
 
 	handleClick: function()
 	{
-		// console.log(this);
-		// this.setState({detail: (this.state.detail == 'on') ? 'off' : 'on'});
 		this.setState
 		({
 			open: !this.state.open,
@@ -32,26 +24,6 @@ var Recipe = React.createClass
 
 	render: function()
 	{
-		// var tags = (this.state.detail == 'on') ?
-		// (
-		// 	<div className="recipe">
-		// 		<div className="recipe-heading on">
-		// 			<a href="#" onClick={this.handleClick}>{this.props.data.name}</a>
-		// 		</div>
-		// 		<RecipeDetails data={this.props.data}/>
-		// 	</div>
-		// )
-		// :
-		// (
-		// 	<div className="recipe">
-		// 		<div className="recipe-heading">
-		// 			<a href="#" onClick={this.handleClick}>{this.props.data.name}</a>
-		// 		</div>
-		// 	</div>
-		// );
-		//
-		// return tags;
-
 		var details;
 		if(this.state.open)
 		{

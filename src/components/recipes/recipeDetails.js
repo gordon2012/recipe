@@ -17,7 +17,6 @@ var RecipeDetails = React.createClass
 			</div>
 		);
 	}
-
 });
 
 module.exports = RecipeDetails;
