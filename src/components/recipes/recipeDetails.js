@@ -8,9 +8,11 @@ var RecipeDetails = React.createClass
 	{
 		return (
 			<div>
-				<ul className="list-group recipe-details">
-					<li className="list-group-item">Lorem Ipsum</li>
-					<li className="list-group-item">Ergo Sum</li>
+				<ul className="recipe-detail">
+					{this.props.data.ingredients.map(function(ingr, i)
+					{
+						return <li key={i}>{ingr}</li>;
+					})}
 				</ul>
 			</div>
 		);

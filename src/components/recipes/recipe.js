@@ -24,20 +24,25 @@ var Recipe = React.createClass
 
 	render: function()
 	{
-		var details;
-		if(this.state.detail == 'on')
-		{
-			details = <RecipeDetails />;
-		}
-
-		return (
-			<div>
+		var tags = (this.state.detail == 'on') ?
+		(
+			<div className="recipe">
+				<div className="recipe-heading on">
+					<a href="#" onClick={this.handleClick}>{this.props.data.name}</a>
+				</div>
+				<RecipeDetails data={this.props.data}/>
+			</div>
+		)
+		:
+		(
+			<div className="recipe">
 				<div className="recipe-heading">
 					<a href="#" onClick={this.handleClick}>{this.props.data.name}</a>
 				</div>
-				{details}
 			</div>
 		);
+
+		return tags;
 	}
 });
 
