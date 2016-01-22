@@ -8,10 +8,10 @@ var RecipeDetails = React.createClass
 	{
 		return (
 			<div>
-				<ul className="recipe-detail">
+				<ul className="recipe-detail list-group">
 					{this.props.data.ingredients.map(function(ingr, i)
 					{
-						return <li key={i}>{ingr}</li>;
+						return <li className="list-group-item" key={i}>{ingr}</li>;
 					})}
 				</ul>
 			</div>
