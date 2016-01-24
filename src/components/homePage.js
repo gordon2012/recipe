@@ -26,7 +26,7 @@ var Home = React.createClass
 					<p>A project for FreeCodeCamp using React and Sass.</p>
 				</div>
 				<RecipeList data={this.state.recipes} />
-				<button className="btn btn-primary">New Recipe</button>
+				<button className="btn btn-primary new-recipe">New Recipe</button>
 			</div>
 		);
 	}
