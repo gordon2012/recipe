@@ -9,12 +9,37 @@ var Home = React.createClass
 
 	getInitialState: function()
 	{
-		return {
-			recipes: [
+
+		// var stateObj = {show: false};
+		// var recipes = [];
+
+		if(localStorage.length > 0)
+		{
+			console.log('has localStorage');
+			// console.log(localStorage);
+		}
+		else
+		{
+			console.log('no localStorage');
+
+			localStorage.setItem('gordon2012-recipeBook', JSON.stringify
+			([
 				{id: 0, name: 'Turtle Soup', ingredients: ['turtle', 'basil', 'water']},
 				{id: 1, name: 'Cherry Pie', ingredients: ['pie crust', 'cherries']},
-				{id: 2, name: 'Toast', ingredients: ['bread', 'butter']}
-			],
+				{id: 2, name: 'Toast', ingredients: ['bread', 'butter']},
+			]));
+		}
+
+		// var testObj = JSON.parse(localStorage.getItem('gordon2012-recipeBook'));
+		// console.log(testObj);
+
+
+
+		return {
+			// recipes: [
+			// 	{id: 0, name: 'Edible Goo', ingredients: ['Rat Tail', 'Rat Ears']},
+			// ],
+			recipes: JSON.parse(localStorage.getItem('gordon2012-recipeBook')),
 			show: false
 		};
 	},
