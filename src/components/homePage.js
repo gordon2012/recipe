@@ -15,14 +15,14 @@ var Home = React.createClass
 				{id: 1, name: 'Cherry Pie', ingredients: ['pie crust', 'cherries']},
 				{id: 2, name: 'Toast', ingredients: ['bread', 'butter']}
 			],
-			popUp: false
+			show: false
 		};
 	},
 
-	onClick: function()
+	handleClick: function()
 	{
-		this.setState({popup: true});
-		console.log('yo!');
+		console.log(this.state.show ? 'Hiding' : 'Showing');
+		this.setState({show: !this.state.show});
 	},
 
 	render: function()
@@ -35,9 +35,11 @@ var Home = React.createClass
 				</div>
 				<RecipeList data={this.state.recipes} />
 				<button className="btn btn-primary new-recipe"
-					onClick={this.onClick}>New Recipe
+					onClick={this.handleClick}>Add Recipe
 				</button>
-				<PopUp popUp={this.state.popUp}/>
+				<PopUp show={this.state.show}
+					handleClose={this.handleClick}
+				/>
 			</div>
 		);
 	}
