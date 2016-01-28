@@ -3,6 +3,7 @@
 var React = require('react');
 var RecipeList = require('./recipes/recipeList');
 var PopUp = require('./common/popUp');
+var RecipeManage = require('./recipes/recipeManage');
 
 var Home = React.createClass
 ({
@@ -21,7 +22,7 @@ var Home = React.createClass
 			([
 				{id: 0, name: 'Turtle Soup', ingredients: ['turtle', 'basil', 'water']},
 				{id: 1, name: 'Cherry Pie', ingredients: ['pie crust', 'cherries']},
-				{id: 2, name: 'Toast', ingredients: ['bread', 'butter']},
+				{id: 2, name: 'Toast', ingredients: ['bread', 'butter']}
 			]));
 		}
 
@@ -51,7 +52,10 @@ var Home = React.createClass
 				</button>
 				<PopUp show={this.state.show}
 					handleClose={this.handleClick}
-				/>
+					width="60%"
+					minHeight="100px">
+					<RecipeManage handleClose={this.handleClick} />
+				</PopUp>
 			</div>
 		);
 	}
