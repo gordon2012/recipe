@@ -43,7 +43,7 @@ var PopUp = React.createClass
 
 		return (
 			<div style={baseStyle}>
-				<div style={popupStyle} className="panel panel-default">
+				<div style={popupStyle}>
 					{this.props.children}
 				</div>
 			</div>
