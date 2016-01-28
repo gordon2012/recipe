@@ -35,7 +35,6 @@ var config =
 
 // Default
 gulp.task('default', ['lint', 'html', 'js', 'css', 'open', 'watch']);
-//gulp.task('default', ['lint', 'html', 'js', 'css', 'open', 'watch']);
 
 
 // Lint
@@ -54,6 +53,7 @@ gulp.task('html', function()
 		.pipe(gulp.dest(config.paths.dist))
 		.pipe(connect.reload());
 });
+
 
 // JS
 gulp.task('js', function()
@@ -81,7 +81,7 @@ gulp.task('css', function()
 		.pipe(concat('bundle.css'))
 		.pipe(gulp.dest(config.paths.dist))
 		.pipe(connect.reload());
-		
+
 });
 
 

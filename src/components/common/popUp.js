@@ -33,7 +33,6 @@ var PopUp = React.createClass
 			position: 'relative',
 			background: '#fff',
 			margin: '120px auto'
-			// padding: '20px'
 		};
 
 		var closeStyle = {

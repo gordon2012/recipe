@@ -13,11 +13,6 @@ var Recipe = React.createClass
 	render: function()
 	{
 		var className = this.props.open ? 'recipe open' : 'recipe';
-		// var details;
-		// if(this.props.open)
-		// {
-		// 	details = <RecipeDetails data={this.props.data}/>;
-		// }
 
 		return (
 			<div className={className}>

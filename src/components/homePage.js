@@ -9,14 +9,9 @@ var Home = React.createClass
 
 	getInitialState: function()
 	{
-
-		// var stateObj = {show: false};
-		// var recipes = [];
-
 		if(localStorage.length > 0)
 		{
 			console.log('has localStorage');
-			// console.log(localStorage);
 		}
 		else
 		{
@@ -30,15 +25,7 @@ var Home = React.createClass
 			]));
 		}
 
-		// var testObj = JSON.parse(localStorage.getItem('gordon2012-recipeBook'));
-		// console.log(testObj);
-
-
-
 		return {
-			// recipes: [
-			// 	{id: 0, name: 'Edible Goo', ingredients: ['Rat Tail', 'Rat Ears']},
-			// ],
 			recipes: JSON.parse(localStorage.getItem('gordon2012-recipeBook')),
 			show: false
 		};
