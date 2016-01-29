@@ -32,8 +32,9 @@ var Home = React.createClass
 		};
 	},
 
-	handleClick: function()
+	handleClick: function(event)
 	{
+		event.preventDefault();
 		console.log(this.state.show ? 'Hiding' : 'Showing');
 		this.setState({show: !this.state.show});
 	},
