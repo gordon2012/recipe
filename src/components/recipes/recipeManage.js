@@ -26,12 +26,10 @@ var RecipeManage = React.createClass
 	{
 		event.preventDefault();
 
-		var ls = JSON.parse(localStorage.getItem('gordon2012-recipeBook'));
-		ls.push({id: ls.length, name: this.state.recipe.name, ingredients: this.state.recipe.ingredients.split(',')});
-		localStorage.setItem('gordon2012-recipeBook', JSON.stringify(ls));
+		var id = JSON.parse(localStorage.getItem('gordon2012-recipeBook')).length;
+		var recipe = {id: id, name: this.state.recipe.name, ingredients: this.state.recipe.ingredients.split(',')};
 
-		// TODO: notify main page of new record in localStorage
-
+		this.props.onAddRecipe(recipe);
 		this.props.handleClose(event);
 	},
 
@@ -58,19 +56,19 @@ var RecipeManage = React.createClass
 						<span><h4>Add Recipe <a href="#" onClick={this.props.handleClose} className="pull-right"><i style={closeStyle}>&times;</i></a></h4></span>
 					</div>
 					<div className="panel-body">
+
 						<Input name="name"
 							label="Recipe"
 							onChange={this.setRecipeState}
 							value={this.state.recipe.name}
-							placeholder="Recipe Name"
-						/>
+							placeholder="Recipe Name" />
 
 						<Input name="ingredients"
 							label="Ingredients"
 							onChange={this.setRecipeState}
 							value={this.state.recipe.ingredients}
-							placeholder="Enter Ingredients,Separated,By Commas"
-						/>
+							placeholder="Enter Ingredients,Separated,By Commas" />
+
 					</div>
 					<div className="panel-footer" style={{height: '55px'}}>
 						<input type="submit" value="Add Recipe" className="btn btn-primary" onClick={this.handleAddRecipe} />
