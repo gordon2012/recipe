@@ -17,8 +17,8 @@ var Recipe = React.createClass
 		if(this.props.open)
 		{
 			classTop = 'recipe open';
-			classWrap = 'detail-wrap margin-8 border-r';
-			classDetail = 'detail margin-8 border-g';
+			classWrap = 'detail-wrap margin-8';
+			classDetail = 'detail margin-8';
 		}
 		else
 		{
@@ -33,11 +33,9 @@ var Recipe = React.createClass
 			<div className={classTop}>
 				<div className="recipe-heading" onClick={this.handleClick}>{this.props.data.name}</div>
 				<div className={classWrap}>
-					<h4>Detail Wrap</h4>
+					<h4>Ingredients</h4>
 					<div className={classDetail}>
-						Detail
 						<RecipeDetails data={this.props.data}/>
-						End detail
 					</div>
 					<button className="btn btn-danger">Delete</button><button className="btn btn-default">Edit</button>
 				</div>
